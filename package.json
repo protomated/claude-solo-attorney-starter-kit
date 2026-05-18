@@ -15,6 +15,7 @@
     "site:install": "npm install --prefix site",
     "site:dev": "npm run dev --prefix site",
     "site:build": "npm run build --prefix site",
-    "site:preview": "npm run preview --prefix site"
+    "site:preview": "npm run preview --prefix site",
+    "site:deploy": "npm run deploy --prefix site"
   }
 }
