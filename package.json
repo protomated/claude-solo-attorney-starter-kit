@@ -1,6 +1,6 @@
 {
   "name": "solo-attorney-assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Solo Attorney Assistant — Claude Cowork plugin for solo attorneys",
   "private": true,
   "scripts": {
