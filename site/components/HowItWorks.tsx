@@ -2,11 +2,11 @@ const steps = [
   {
     n: "1",
     title: "Download and install",
-    desc: "Double-click the .mcpb file. Claude Desktop installs the plugin automatically — no Terminal, no config files.",
+    desc: "Double-click the .zip file. Claude Desktop installs the plugin automatically — no Terminal, no config files.",
   },
   {
     n: "2",
-    title: "Connect Gmail and your matters folder",
+    title: "Connect Gmail, your matters folder, and Google Calendar",
     desc: "One click each in Claude Desktop → Connectors. Anthropic handles the OAuth; your credentials never touch our servers.",
   },
   {

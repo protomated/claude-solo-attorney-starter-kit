@@ -1,6 +1,6 @@
 # Solo Attorney Assistant
 
-A Claude Desktop plugin for solo attorneys. Five skills that read your local matter files and Gmail to draft demand letters, client status updates, engagement letters, intake summaries, and pre-meeting briefs — in under five minutes of setup.
+A Claude Desktop plugin for solo attorneys. Six skills that read your local matter files, Gmail, and Google Calendar to organize new matters, draft engagement letters and intake summaries, compute court deadlines, prepare meeting briefs, and draft billing narratives — in under five minutes of setup.
 
 Distributed free by [Protomated](https://protomated.com) at [protomated.com/resources](https://protomated.com/resources).
 
@@ -42,11 +42,12 @@ docs/
 
 | Skill | What it does |
 |---|---|
-| `/intake-summary` | Converts raw consultation notes into a structured case brief; creates the `intake-summary.md` all other skills read from |
-| `/client-status-update` | Drafts a client update email from your matter folder and recent Gmail |
-| `/demand-letter` | Drafts a practice-area-specific demand letter |
+| `/intake-summary` | Converts raw consultation notes into a structured case brief; creates `intake-summary.md` — run first on any new matter |
 | `/engagement-letter` | Drafts a retainer and engagement letter from intake data |
-| `/meeting-prep` | Produces a one-page brief for depositions, mediations, hearings, and client check-ins |
+| `/court-deadline` | Computes a court or filing deadline from a trigger date and rule you provide; drafts a Google Calendar event for confirmation |
+| `/meeting-prep` | Produces a one-page brief for client meetings, depositions, mediations, and court appearances |
+| `/billing-narrative` | Drafts a billing-code-appropriate time narrative from your notes or an email thread |
+| `/new-matter-organizer` | Creates the standard folder tree and task checklist for a new matter; sorts existing documents by type |
 
 ---
 
