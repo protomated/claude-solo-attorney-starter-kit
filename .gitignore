@@ -141,5 +141,4 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
-solo-attorney-assistant-v1.0.0.zip
-solo-attorney-assistant-v1.0.0.zip.sha256
+/solo-attorney-assistant-*.zip
