@@ -1,7 +1,7 @@
 {
   "name": "solo-attorney-assistant",
-  "version": "1.0.0",
-  "description": "A solo attorney operations assistant for Claude Desktop. Drafts client status updates, demand letters, engagement letters, and intake summaries — all from your local matter files and Gmail.",
+  "version": "2.0.0",
+  "description": "A solo attorney operations assistant for Claude Desktop. Six skills: intake summary, engagement letter, court deadline reasoning, meeting prep brief, billing narrative drafter, and new-matter organizer — from your local files, Gmail, and Google Calendar.",
   "author": {
     "name": "Protomated"
   }

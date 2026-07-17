@@ -2,29 +2,34 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const skills = [
   {
-    command: "/client-status-update",
-    title: "Client Status Update",
-    desc: "Reads your matter folder and recent Gmail, then drafts a personalized update email in your voice. You review it; one confirm to send.",
-  },
-  {
-    command: "/demand-letter",
-    title: "Demand Letter",
-    desc: "Drafts practice-area-specific demand letters from your intake files. Supports personal injury, contract breach, employment, and collections.",
+    command: "/intake-summary",
+    title: "Intake Summary",
+    desc: "Converts raw consultation notes into a structured case brief: parties, facts, deadlines, evidence checklist, and conflicts flag. Run first on any new matter — creates the anchor file every other skill reads from.",
   },
   {
     command: "/engagement-letter",
     title: "Engagement Letter",
-    desc: "Generates a retainer and engagement letter from client intake data — scope, fees (hourly, flat, or contingency), and required disclosures.",
+    desc: "Generates a retainer and engagement letter from client intake data — scope, fees (hourly, flat, or contingency), and required ethical disclosures.",
   },
   {
-    command: "/intake-summary",
-    title: "Intake Summary",
-    desc: "Converts raw consultation notes into a structured case brief: parties, facts, deadlines, evidence checklist, and conflicts flag. The anchor document every other skill reads from.",
+    command: "/court-deadline",
+    title: "Court Deadline Reasoning",
+    desc: "Computes a court or filing deadline from a trigger date and rule you provide. Shows step-by-step reasoning. Drafts a Google Calendar event — you confirm before it's created.",
   },
   {
     command: "/meeting-prep",
     title: "Meeting Prep Brief",
     desc: "Pulls context from your matter folder to produce a one-page brief before a client meeting, deposition, mediation, or court appearance.",
+  },
+  {
+    command: "/billing-narrative",
+    title: "Billing Narrative",
+    desc: "Drafts a billing-code-appropriate time narrative from your rough notes or an email thread. You confirm accuracy and paste into Clio, MyCase, or any billing system.",
+  },
+  {
+    command: "/new-matter-organizer",
+    title: "New-Matter Organizer",
+    desc: "Creates the standard folder tree and task checklist for a new matter based on practice area. Sorts existing documents by type. Proposes everything — no files or folders created without your confirmation.",
   },
 ];
 
@@ -32,7 +37,7 @@ export default function Skills() {
   return (
     <section className="bg-muted py-20" id="skills">
       <div className="mx-auto max-w-[960px] px-6">
-        <h2 className="mb-3 text-center text-[1.9rem]">5 skills included</h2>
+        <h2 className="mb-3 text-center text-[1.9rem]">6 skills included</h2>
         <p className="mx-auto mb-12 max-w-[560px] text-center font-sans text-base text-muted-foreground">
           Each skill knows which files and emails to read, what to draft, and to
           wait for your confirmation before taking any action.

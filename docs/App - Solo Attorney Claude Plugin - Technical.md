@@ -34,6 +34,7 @@ Marginal cost per installed attorney is zero. Infrastructure cost is flat regard
 | **Skills** | `SKILL.md` (Anthropic spec) | YAML frontmatter + markdown body. Five files. |
 | **Gmail Integration** | Claude Desktop built-in Gmail connector | Declared as required in `.mcp.json`. Anthropic handles OAuth, tokens, refresh. |
 | **Filesystem Integration** | Claude Desktop built-in Filesystem connector | Declared as required in `.mcp.json`. Anthropic handles path permissions. |
+| **Google Calendar Integration** | Claude Desktop built-in Google Calendar connector | Declared as required in `.mcp.json`. Used by `/court-deadline` to create deadline events after attorney confirmation. |
 | **Landing Page** | React (Next.js) on Cloudflare Pages | Static site with edge API route for Kit; free tier. |
 | **Plugin Hosting** | GitHub Releases | Free unlimited bandwidth for public `.zip` release assets. |
 | **Email Capture** | Kit (formerly ConvertKit) — free Newsletter plan | Up to 10,000 subscribers free. |
@@ -48,7 +49,7 @@ Marginal cost per installed attorney is zero. Infrastructure cost is flat regard
 
 ### 2.1 Use Claude Desktop's built-in connectors; build no MCP servers
 
-**Decision:** The plugin declares Gmail and Filesystem as required connectors in `.mcp.json` rather than bundling its own MCP servers.
+**Decision:** The plugin declares Gmail, Filesystem, and Google Calendar as required connectors in `.mcp.json` rather than bundling its own MCP servers.
 
 **Why:** Claude Desktop ships first-party managed connectors for Gmail, Filesystem, Google Drive, Calendar, and GitHub. Declaring them as requirements via `.mcp.json` causes Claude Desktop to prompt the attorney with a "Connect" button; Anthropic handles the entire OAuth flow, secure token storage, and refresh — through their own infrastructure, with their own DPA and audited security posture.
 
@@ -112,7 +113,7 @@ erDiagram
         string description
     }
     MCP_JSON {
-        json mcpServers "declares: gmail, filesystem"
+        json mcpServers "declares: gmail, filesystem, google-calendar"
     }
     SKILL {
         string name "directory name"
@@ -176,12 +177,13 @@ The only auth-adjacent thing we ship is the connector declaration in `.mcp.json`
 {
   "mcpServers": {
     "gmail": { "type": "http", "url": "" },
-    "filesystem": { "type": "http", "url": "" }
+    "filesystem": { "type": "http", "url": "" },
+    "google-calendar": { "type": "http", "url": "" }
   }
 }
 ```
 
-When the attorney installs the plugin, Claude Desktop's Connectors panel shows Gmail and Filesystem with a "Connect" button and the note "Required by: Solo Attorney Assistant." One click per connector completes setup.
+When the attorney installs the plugin, Claude Desktop's Connectors panel shows Gmail, Filesystem, and Google Calendar with a "Connect" button and the note "Required by: Solo Attorney Assistant." One click per connector completes setup.
 
 ### 4.2 Data handling policies
 
@@ -312,11 +314,12 @@ tree -a
 # ├── .claude-plugin/plugin.json
 # ├── .mcp.json
 # ├── skills/
-# │   ├── client-status-update/SKILL.md
-# │   ├── demand-letter/SKILL.md
-# │   ├── engagement-letter/SKILL.md
 # │   ├── intake-summary/SKILL.md
-# │   └── meeting-prep/SKILL.md
+# │   ├── engagement-letter/SKILL.md
+# │   ├── court-deadline/SKILL.md
+# │   ├── meeting-prep/SKILL.md
+# │   ├── billing-narrative/SKILL.md
+# │   └── new-matter-organizer/SKILL.md
 # ├── prompts/system-prompt.md
 # ├── CONNECTORS.md
 # ├── LICENSE
@@ -326,7 +329,7 @@ tree -a
 # Open Claude Desktop → Customize → Personal plugins → "+"
 # Point it at the cloned directory
 
-# 4. In Claude Desktop → Connectors, click "Connect" on Gmail and Filesystem
+# 4. In Claude Desktop → Connectors, click "Connect" on Gmail, Filesystem, and Google Calendar
 # (One-time, per attorney; Anthropic handles the OAuth)
 
 # 5. Verify in a new chat:
@@ -397,8 +400,8 @@ Attorneys install by double-clicking the `.zip` file or dragging it into Claude 
 
 ### 10.1 Pre-Launch
 
-- [ ] All five `SKILL.md` files validated against Anthropic's skill spec
-- [ ] Tool names in each skill verified against Claude Desktop's live Gmail and Filesystem connectors
+- [ ] All six `SKILL.md` files validated against Anthropic's skill spec
+- [ ] Tool names in each skill verified against Claude Desktop's live Gmail, Filesystem, and Google Calendar connectors
 - [ ] Master system prompt reviewed by a licensed attorney
 - [ ] Compliance language (README first section + skill headers/footers) reviewed by a licensed attorney
 - [ ] README and CONNECTORS.md proofread

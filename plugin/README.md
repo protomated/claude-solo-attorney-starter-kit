@@ -1,6 +1,6 @@
 # Solo Attorney Assistant — Claude Desktop Plugin
 
-A Claude Desktop plugin that turns your local matter files and Gmail into a solo attorney operations assistant. Drafts client status updates, demand letters, engagement letters, intake summaries, and pre-meeting briefs — in your voice, from your files, in under five minutes of setup.
+A Claude Desktop plugin that turns your local matter files, Gmail, and Google Calendar into a solo attorney operations assistant. Six pre-built skills: intake summaries, engagement letters, court deadline reasoning, meeting prep briefs, billing narrative drafting, and new-matter setup — from your own files, in under five minutes of setup.
 
 **Distributed by [Protomated](https://protomated.com) as a free download.**
 
@@ -76,18 +76,26 @@ The plugin is instructed to request your explicit in-conversation confirmation b
 > ~/Matters/
 > ├── Smith-John-PI/
 > │   ├── intake-summary.md
-> │   ├── medical-records-summary.md
-> │   └── notes/
+> │   ├── tasks.md
+> │   ├── medical/
+> │   └── correspondence/
 > ├── Acme-Contract-Dispute/
 > │   ├── intake-summary.md
-> │   └── demand-letter-draft-2026-05-01.md
+> │   ├── tasks.md
+> │   └── pleadings/
 > └── ...
 > ```
-> Each matter gets its own folder. Run `/intake-summary` on a new matter to create the `intake-summary.md` anchor file that all other skills read from.
+> Run `/new-matter-organizer` to create this structure for a new matter, then `/intake-summary` to populate the anchor file all other skills read from.
 
-### Step 4 — Verify
+### Step 4 — Connect Google Calendar
 
-Open a new Claude Desktop chat. Type `/skills`. You should see all five skills listed. Run `/intake-summary` on a test matter to verify Filesystem access is working.
+1. In **Settings → Connectors**, find **Google Calendar** and click **Connect**.
+2. Sign in with the same Google account you use for scheduling.
+3. This connector is used by `/court-deadline` to create deadline events after your confirmation.
+
+### Step 5 — Verify
+
+Open a new Claude Desktop chat. Type `/skills`. You should see all six skills listed. Run `/intake-summary` on a test matter to verify Filesystem access is working.
 
 See [CONNECTORS.md](CONNECTORS.md) for troubleshooting.
 
@@ -95,28 +103,17 @@ See [CONNECTORS.md](CONNECTORS.md) for troubleshooting.
 
 ## Skills
 
-### `/client-status-update` — Client Status Update Drafter
+### `/intake-summary` — Intake Summary Processor
 
-Reads your matter folder and recent Gmail, drafts a personalized client update email in your voice. Requires your confirmation before sending or saving to Gmail Drafts.
+**Run this first on any new matter.** Converts raw intake notes or pasted consultation notes into a structured case brief: parties, facts, claims, deadlines, evidence checklist, and next steps. Flags statute-of-limitations issues and surfaces names for a conflicts check. The output becomes the `intake-summary.md` that all other skills read from.
 
-**Use when:** A hearing happened, a filing went out, a settlement offer came in, or a client is overdue for an update.
-
-```
-/client-status-update Smith-John-PI
-/client-status-update ~/Matters/Smith-John-PI
-```
-
----
-
-### `/demand-letter` — Demand Letter Generator
-
-Drafts a practice-area-specific demand letter from your matter folder. Supports personal injury, contract breach, employment claims, property damage, and collections. Reads your intake summary and damage documentation to populate the facts and figures.
-
-**Use when:** It's time to put the other side on notice and set a deadline.
+**Use when:** You've just finished an initial consultation and need to open the file.
 
 ```
-/demand-letter Smith-John-PI
-/demand-letter ~/Matters/Acme-Contract-Dispute
+/intake-summary
+[paste your raw notes]
+
+/intake-summary ~/Matters/New-Client-Folder
 ```
 
 ---
@@ -134,17 +131,14 @@ Drafts a retainer and engagement letter from intake data. Covers scope of repres
 
 ---
 
-### `/intake-summary` — Intake Summary Processor
+### `/court-deadline` — Court Deadline Reasoning & Calendar Drafter
 
-Converts raw intake notes or pasted consultation notes into a structured case brief: parties, facts, claims, deadlines, evidence checklist, and next steps. Flags statute-of-limitations issues and surfaces names for a conflicts check. The output becomes the `intake-summary.md` that all other skills read from.
+Computes a court or filing deadline from a trigger date and the rule you provide. Shows every step of the reasoning so you can verify it. Drafts a Google Calendar event — you confirm before it is created. Does not maintain a jurisdiction-specific rule database; you supply the rule and verify the output.
 
-**Use when:** You've just finished an initial consultation and need to open the file.
+**Use when:** You need to calculate a response deadline, appeal window, or statute-of-limitations date and want the reasoning shown step by step.
 
 ```
-/intake-summary
-[paste your raw notes]
-
-/intake-summary ~/Matters/New-Client-Folder
+/court-deadline "served May 12" "responsive pleading due 21 days after service, excluding weekends and federal holidays"
 ```
 
 ---
@@ -162,23 +156,50 @@ Pulls context from your matter folder and recent email to produce a one-page bri
 
 ---
 
+### `/billing-narrative` — Billing Narrative Drafter
+
+Drafts a billing-code-appropriate time narrative and suggests a time increment from your rough notes, an email thread, or a description of work performed. You confirm accuracy and paste into your billing system (Clio, MyCase, PracticePanther, etc.).
+
+**Use when:** You've completed billable work and need a clean, professional time entry without spending ten minutes writing it yourself.
+
+```
+/billing-narrative "reviewed deposition transcript, drafted summary memo, called client re: settlement offer — approx 2 hrs"
+```
+
+---
+
+### `/new-matter-organizer` — New-Matter Setup & Document Organizer
+
+Creates the standard folder tree for a new matter (based on practice area), populates a starter task checklist, and sorts any existing documents into the right sub-folders. Proposes everything first — no folders or files are created without your confirmation.
+
+**Use when:** Opening a new client file and you want a consistent, organized matter folder from day one.
+
+```
+/new-matter-organizer "Smith-John-PI" "personal injury"
+/new-matter-organizer "Nguyen-Divorce-2026" "family law"
+```
+
+---
+
 ## How It Works
 
-This plugin connects Claude Desktop to two things you already have: your local matter files and your Gmail. There is no cloud database, no subscription, and no Protomated server involved in processing your client data.
+This plugin connects Claude Desktop to three things you already have: your local matter files, your Gmail, and your Google Calendar. There is no cloud database, no subscription, and no Protomated server involved in processing your client data.
 
 ```
 Your matter files (Filesystem) ──┐
-                                  ├──▶ Claude Desktop ──▶ Your review ──▶ Action
-Your Gmail (Gmail connector) ─────┘
+                                  │
+Your Gmail (Gmail connector) ─────┼──▶ Claude Desktop ──▶ Your review ──▶ Action
+                                  │
+Your Calendar (Google Calendar) ──┘
 ```
 
-All processing happens inside your Claude Desktop session. See §4 of [Connectors.md](CONNECTORS.md) for data handling details.
+All processing happens inside your Claude Desktop session. See [CONNECTORS.md](CONNECTORS.md) for data handling details.
 
 ---
 
 ## Want a Custom Skill Library Built for Your Practice?
 
-This kit covers five core workflows. The typical solo attorney practice has 15–20 more: jurisdiction-specific court filings, client intake questionnaires tuned to your practice areas, automated calendar syncing with case deadlines, Clio or Filevine integration, and more.
+This kit covers six core workflows. The typical solo practice has 15–20 more: jurisdiction-specific court filings, intake questionnaires tuned to your practice areas, Clio or Filevine integration, and skills built to your exact voice and playbook.
 
 **Protomated builds custom Claude Desktop skill libraries for solo and small-firm attorneys: $3,000–$6,000 depending on scope.**
 

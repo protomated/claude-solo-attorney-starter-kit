@@ -2,8 +2,8 @@
   "manifest_version": "0.2",
   "name": "solo-attorney-assistant",
   "display_name": "Solo Attorney Assistant",
-  "version": "1.0.0",
-  "description": "5 pre-built AI skills for solo attorneys: client status updates, demand letters, engagement letters, intake summaries, and meeting prep briefs. Reads your local matter files and Gmail. All output requires attorney review before use.",
+  "version": "2.0.0",
+  "description": "6 pre-built AI skills for solo attorneys: intake summary, engagement letter, court deadline reasoning, meeting prep brief, billing narrative drafter, and new-matter organizer. Reads your local matter files, Gmail, and Google Calendar. All output requires attorney review before use.",
   "author": {
     "name": "Protomated",
     "url": "https://protomated.com"
