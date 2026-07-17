@@ -9,7 +9,7 @@
     "checksum": "sha256sum solo-attorney-starter-kit-v$npm_package_version.zip | tee solo-attorney-starter-kit-v$npm_package_version.zip.sha256",
     "deploy:artifact": "mkdir -p site/public/downloads && cp solo-attorney-starter-kit-v$npm_package_version.zip site/public/downloads/solo-attorney-starter-kit.zip",
     "build": "npm run validate && npm run pack && npm run checksum && npm run deploy:artifact",
-    "release": "git tag v$npm_package_version && git push origin v$npm_package_version",
+    "release": "npm run build && gh release create v$npm_package_version solo-attorney-starter-kit-v$npm_package_version.zip solo-attorney-starter-kit-v$npm_package_version.zip.sha256 --title \"v$npm_package_version\" --notes-file RELEASE.md",
     "clean": "rm -f ./*.zip ./*.zip.sha256",
     "tree": "find plugin -type f -not -path '*/node_modules/*' | sort",
     "site:install": "npm install --prefix site",
