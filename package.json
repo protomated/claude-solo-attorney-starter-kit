@@ -1,13 +1,13 @@
 {
-  "name": "solo-attorney-assistant",
+  "name": "solo-attorney-starter-kit",
   "version": "2.0.0",
-  "description": "Solo Attorney Assistant — Claude Cowork plugin for solo attorneys",
+  "description": "Solo Attorney Claude Starter Kit — Claude Desktop plugin for solo attorneys",
   "private": true,
   "scripts": {
     "validate": "node scripts/validate-plugin.mjs plugin",
-    "pack": "rm -f /tmp/solo-attorney-assistant.zip && (cd plugin && zip -r /tmp/solo-attorney-assistant.zip . -x '*.DS_Store' 'node_modules/*' '*/node_modules/*' 'package-lock.json') && mv /tmp/solo-attorney-assistant.zip ./solo-attorney-assistant-v$npm_package_version.zip",
-    "checksum": "sha256sum solo-attorney-assistant-v$npm_package_version.zip | tee solo-attorney-assistant-v$npm_package_version.zip.sha256",
-    "deploy:artifact": "mkdir -p site/public/downloads && cp solo-attorney-assistant-v$npm_package_version.zip site/public/downloads/solo-attorney-assistant.zip",
+    "pack": "rm -f /tmp/solo-attorney-starter-kit.zip && (cd plugin && zip -r /tmp/solo-attorney-starter-kit.zip . -x '*.DS_Store' 'node_modules/*' '*/node_modules/*' 'package-lock.json') && mv /tmp/solo-attorney-starter-kit.zip ./solo-attorney-starter-kit-v$npm_package_version.zip",
+    "checksum": "sha256sum solo-attorney-starter-kit-v$npm_package_version.zip | tee solo-attorney-starter-kit-v$npm_package_version.zip.sha256",
+    "deploy:artifact": "mkdir -p site/public/downloads && cp solo-attorney-starter-kit-v$npm_package_version.zip site/public/downloads/solo-attorney-starter-kit.zip",
     "build": "npm run validate && npm run pack && npm run checksum && npm run deploy:artifact",
     "release": "git tag v$npm_package_version && git push origin v$npm_package_version",
     "clean": "rm -f ./*.zip ./*.zip.sha256",

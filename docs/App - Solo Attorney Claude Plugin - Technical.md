@@ -89,7 +89,7 @@ Building our own MCP servers would require provisioning Google OAuth credentials
 
 **CI flow on tag push (`v1.0.0`, etc.):**
 1. Run `npm run validate` (`scripts/validate-plugin.mjs`) against `plugin.json`, `.mcp.json`, and all `SKILL.md` frontmatter
-2. Run `npm run pack` to produce `solo-attorney-assistant-v1.0.0.zip`
+2. Run `npm run pack` to produce `solo-attorney-starter-kit-v2.0.0.zip`
 3. Run `npm run checksum` to compute SHA-256
 4. Run `npm run deploy:artifact` to copy bundle to `site/public/downloads/`
 5. Publish `.zip` + checksum to GitHub Releases
@@ -305,8 +305,8 @@ No actual secrets are committed; placeholders documented in `.env.example`.
 
 ```bash
 # 1. Clone
-git clone https://github.com/protomated/solo-attorney-assistant.git
-cd solo-attorney-assistant
+git clone https://github.com/protomated/claude-solo-attorney-starter-kit.git
+cd claude-solo-attorney-starter-kit
 
 # 2. Inspect the structure
 tree -a
@@ -346,7 +346,7 @@ npm run build
 
 # Or individually:
 npm run validate   # validate plugin/ structure (scripts/validate-plugin.mjs)
-npm run pack       # zip to solo-attorney-assistant-v1.0.0.zip
+npm run pack       # zip to solo-attorney-starter-kit-v2.0.0.zip
 npm run checksum   # compute SHA-256
 
 # Cut a GitHub release (runs build first, then gh release create)
@@ -386,7 +386,7 @@ Attorneys install by double-clicking the `.zip` file or dragging it into Claude 
 
 **Signup URL:** https://github.com
 
-- Create the `solo-attorney-assistant` repository (private during dev, public for release)
+- Create the `claude-solo-attorney-starter-kit` repository (private during dev, public for release)
 - Configure GitHub Actions secrets per Section 7
 - First release published manually via UI; subsequent via CI on tag push
 

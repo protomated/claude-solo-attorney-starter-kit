@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="mb-10 grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-8">
           <div>
             <strong className="mb-2.5 block text-[0.85rem] uppercase tracking-wider text-[#d0daea]">
-              Solo Attorney Assistant
+              Solo Attorney Claude Starter Kit
             </strong>
             <p className="leading-relaxed">
               A free Claude Desktop plugin by{" "}
@@ -25,7 +25,7 @@ export default function Footer() {
             <ul className="flex list-none flex-col gap-1.5 p-0">
               <li>
                 <a
-                  href="/downloads/solo-attorney-assistant.mcpb"
+                  href="/downloads/solo-attorney-starter-kit.zip"
                   download
                   className="text-[#6b8bbf] no-underline hover:text-[#aac0e0] hover:underline"
                 >
@@ -34,7 +34,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/protomated/solo-attorney-assistant"
+                  href="https://github.com/protomated/claude-solo-attorney-starter-kit"
                   className="text-[#6b8bbf] no-underline hover:text-[#aac0e0] hover:underline"
                 >
                   GitHub
@@ -42,7 +42,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/protomated/solo-attorney-assistant/issues"
+                  href="https://github.com/protomated/claude-solo-attorney-starter-kit/issues"
                   className="text-[#6b8bbf] no-underline hover:text-[#aac0e0] hover:underline"
                 >
                   Report an issue

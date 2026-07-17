@@ -1,4 +1,4 @@
-# Solo Attorney Assistant
+# Solo Attorney Claude Starter Kit
 
 A Claude Desktop plugin for solo attorneys. Six skills that read your local matter files, Gmail, and Google Calendar to organize new matters, draft engagement letters and intake summaries, compute court deadlines, prepare meeting briefs, and draft billing narratives — in under five minutes of setup.
 
@@ -8,7 +8,7 @@ Distributed free by [Protomated](https://protomated.com) at [protomated.com/reso
 
 ## Installing the plugin
 
-Download the latest `.zip` from [Releases](https://github.com/protomated/solo-attorney-assistant/releases) and drag it into Claude Desktop's Extensions panel. See [`plugin/README.md`](plugin/README.md) for full installation and compliance guidance.
+Download the latest `.zip` from [Releases](https://github.com/protomated/claude-solo-attorney-starter-kit/releases) and drag it into Claude Desktop's Extensions panel. See [`plugin/README.md`](plugin/README.md) for full installation and compliance guidance.
 
 ---
 
@@ -81,7 +81,7 @@ npm run site:build
 |---|---|
 | `KIT_API_KEY` | Kit (ConvertKit) API key — email capture |
 | `KIT_FORM_ID` | Kit form ID |
-| `PUBLIC_DOWNLOAD_URL` | URL returned after email capture; defaults to `/downloads/solo-attorney-assistant.zip` |
+| `PUBLIC_DOWNLOAD_URL` | URL returned after email capture; defaults to `/downloads/solo-attorney-starter-kit.zip` |
 
 Copy `site/.env.example` to `site/.env.local` for local development. The plugin itself has no environment variables.
 

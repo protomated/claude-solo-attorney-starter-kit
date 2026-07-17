@@ -93,7 +93,7 @@ Output a structured `intake-summary.md` document:
 ```
 # Intake Summary — [Client Last Name] Matter
 **Date of Consultation:** [date]
-**Prepared by:** Solo Attorney Assistant (review required)
+**Prepared by:** Solo Attorney Claude Starter Kit (review required)
 **Status:** DRAFT — Attorney review required
 
 ---
@@ -212,4 +212,4 @@ Save as intake-summary.md? [Confirm to save]
 
 ---
 
-— Prepared with Protomated Solo Attorney Assistant (Claude Desktop) | Attorney review required before use | Not legal advice
+— Prepared with Protomated Solo Attorney Claude Starter Kit (Claude Desktop) | Attorney review required before use | Not legal advice
