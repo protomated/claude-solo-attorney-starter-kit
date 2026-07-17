@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "npx @cloudflare/next-on-pages",
     "preview": "next start",
-    "deploy": "npm run build && wrangler pages deploy .vercel/output/static --project-name=solo-attorney-assistant"
+    "deploy": "npm run build && wrangler pages deploy .vercel/output/static --project-name=solo-attorney-starter-kit"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

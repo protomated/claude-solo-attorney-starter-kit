@@ -70,7 +70,7 @@ export default function Page() {
             <em>AI-ASSISTED DRAFT &mdash; ATTORNEY REVIEW REQUIRED</em> header.
             The plugin never sends email or writes files without your explicit
             in-conversation confirmation. Full compliance details are in the{" "}
-            <a href="https://github.com/protomated/solo-attorney-assistant/blob/main/plugin/README.md">
+            <a href="https://github.com/protomated/claude-solo-attorney-starter-kit/blob/main/plugin/README.md">
               README
             </a>
             .

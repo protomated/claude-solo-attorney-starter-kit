@@ -1,5 +1,5 @@
 {
-  "name": "solo-attorney-assistant",
+  "name": "solo-attorney-starter-kit",
   "version": "2.0.0",
   "description": "A solo attorney operations assistant for Claude Desktop. Six skills: intake summary, engagement letter, court deadline reasoning, meeting prep brief, billing narrative drafter, and new-matter organizer — from your local files, Gmail, and Google Calendar.",
   "author": {

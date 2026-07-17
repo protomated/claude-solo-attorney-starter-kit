@@ -96,7 +96,7 @@ Required for local site development and Cloudflare Pages deployment (see `site/.
 |---|---|
 | `KIT_API_KEY` | Kit (ConvertKit) API key — email capture |
 | `KIT_FORM_ID` | Kit form ID |
-| `PUBLIC_DOWNLOAD_URL` | URL returned to the user after email capture; defaults to `/downloads/solo-attorney-assistant.mcpb` |
+| `PUBLIC_DOWNLOAD_URL` | URL returned to the user after email capture; defaults to `/downloads/solo-attorney-starter-kit.zip` |
 
 The plugin itself has no environment variables.
 

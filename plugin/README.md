@@ -1,4 +1,4 @@
-# Solo Attorney Assistant — Claude Desktop Plugin
+# Solo Attorney Claude Starter Kit — Claude Desktop Plugin
 
 A Claude Desktop plugin that turns your local matter files, Gmail, and Google Calendar into a solo attorney operations assistant. Six pre-built skills: intake summaries, engagement letters, court deadline reasoning, meeting prep briefs, billing narrative drafting, and new-matter setup — from your own files, in under five minutes of setup.
 
@@ -54,7 +54,7 @@ The plugin is instructed to request your explicit in-conversation confirmation b
 
 ### Step 1 — Download and install
 
-1. Download `solo-attorney-assistant.zip` from the [Releases page](https://github.com/protomated/solo-attorney-assistant/releases).
+1. Download `solo-attorney-starter-kit.zip` from the [Releases page](https://github.com/protomated/claude-solo-attorney-starter-kit/releases).
 2. Double-click the `.zip` file, or drag it into Claude Desktop's **Extensions** panel.
 3. Claude Desktop will install the plugin and prompt you to connect the required services.
 
@@ -213,4 +213,4 @@ Apache 2.0. See [LICENSE](LICENSE).
 
 ## Feedback and Issues
 
-[GitHub Issues](https://github.com/protomated/solo-attorney-assistant/issues) | [hello@protomated.com](mailto:hello@protomated.com)
+[GitHub Issues](https://github.com/protomated/claude-solo-attorney-starter-kit/issues) | [hello@protomated.com](mailto:hello@protomated.com)

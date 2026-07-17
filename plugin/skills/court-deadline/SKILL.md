@@ -74,7 +74,7 @@ Present the proposed calendar event details:
 ```
 Event:        [Deadline name]
 Date:         [Computed deadline] — ALL DAY
-Description:  [Matter name / case number] | Computed from: [trigger date] + [rule] | Computed by: Solo Attorney Assistant — VERIFY BEFORE RELYING
+Description:  [Matter name / case number] | Computed from: [trigger date] + [rule] | Computed by: Solo Attorney Claude Starter Kit — VERIFY BEFORE RELYING
 Reminder:     7 days before; 1 day before [or ask attorney for preferred lead time]
 ```
 
@@ -124,4 +124,4 @@ Confirm to create, or request changes.
 
 ---
 
-— Prepared with Protomated Solo Attorney Assistant (Claude Desktop) | Attorney review required before use | Not legal advice
+— Prepared with Protomated Solo Attorney Claude Starter Kit (Claude Desktop) | Attorney review required before use | Not legal advice
