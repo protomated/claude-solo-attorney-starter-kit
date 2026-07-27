@@ -148,47 +148,297 @@ Generate a practice-area-appropriate folder tree. Present it for confirmation be
 └── settlement/
 ```
 
+**Real Estate:**
+```
+[MatterName]/
+├── intake-summary.md
+├── correspondence/
+│   ├── client/
+│   └── opposing-counsel/
+├── contracts/
+│   ├── purchase-agreement/
+│   └── amendments/
+├── title/
+│   ├── title-commitment/
+│   └── title-insurance/
+├── inspections/
+├── financing/
+│   ├── loan-documents/
+│   └── appraisal/
+├── closing/
+│   ├── settlement-statement/
+│   └── recorded-documents/
+└── disputes/
+```
+
+**Employment:**
+```
+[MatterName]/
+├── intake-summary.md
+├── correspondence/
+│   ├── client/
+│   └── opposing-counsel/
+├── employment-records/
+│   ├── contracts/
+│   ├── handbooks/
+│   └── performance-reviews/
+├── communications/
+│   ├── emails/
+│   └── hr-records/
+├── complaints/
+│   ├── eeoc/
+│   └── internal/
+├── discovery/
+│   ├── requests/
+│   └── responses/
+├── pleadings/
+└── damages/
+```
+
 After presenting the tree, ask:
 > "Does this structure look right for this matter? Say 'yes, create it' to proceed, or tell me what to adjust."
 
 ### Step 4 — Propose the starter task checklist
 
-Generate a practice-area-appropriate task checklist and save it as `tasks.md` inside the new matter folder. Present it first:
+Generate a practice-area-appropriate task checklist and save it as `tasks.md` inside the new matter folder. Select the matching checklist below, present it first, then ask for confirmation.
 
+**Personal Injury:**
 ```markdown
 # [Matter Name] — Task Checklist
-**Opened:** [Date]
-**Practice Area:** [Type]
-**Status:** Active
-
----
+**Opened:** [Date]  **Practice Area:** Personal Injury  **Status:** Active
 
 ## Immediate (first 48 hours)
 - [ ] Run /intake-summary to create the matter brief
-- [ ] Conflicts check — run names: [leave blank for attorney to fill]
-- [ ] Confirm statute of limitations date
-- [ ] Confirm fee agreement / send engagement letter (/engagement-letter)
-- [ ] [Practice-area-specific immediate task]
+- [ ] Conflicts check — run client name and adverse parties: [leave blank]
+- [ ] Confirm statute of limitations date: [state] = [years] from [incident date]
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Identify all insurance coverage (client's, adverse party's, UIM/UM)
+- [ ] Send preservation/litigation hold letter to adverse party
+- [ ] Obtain signed medical release authorization
+- [ ] Order police/incident report if not already received
 
 ## This Week
-- [ ] [Task]
-- [ ] [Task]
+- [ ] Request all medical records and bills to date
+- [ ] Photograph all injuries and property damage
+- [ ] Identify and interview witnesses
+- [ ] Determine need for accident reconstruction expert
 
 ## Ongoing
-- [ ] [Recurring task]
+- [ ] Track medical treatment and update medical chronology
+- [ ] Monitor statute of limitations calendar
+- [ ] Update damages calculation as records arrive
+```
+
+**Family Law:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Family Law  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Conflicts check — run both spouses and children's names: [leave blank]
+- [ ] Confirm filing deadlines and any pending court dates
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Assess need for temporary orders (custody, support, exclusive use of home)
+- [ ] Advise client on financial account preservation (do not dissipate assets)
+- [ ] Confirm date of separation
+
+## This Week
+- [ ] Gather income documentation for both parties
+- [ ] Inventory marital assets and debts
+- [ ] Obtain last 3 years of tax returns
+- [ ] Confirm child custody schedule if children involved
+
+## Ongoing
+- [ ] Track all court deadlines on calendar (/court-deadline)
+- [ ] Update financial disclosure as documents arrive
+- [ ] Monitor compliance with any temporary orders
+```
+
+**Criminal Defense:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Criminal Defense  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Confirm arraignment date and enter on calendar
+- [ ] Review charges and potential penalties
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Assess bail / bond situation — motion to reduce if needed
+- [ ] Advise client: do not speak to law enforcement or post on social media
+- [ ] Identify all co-defendants
+
+## This Week
+- [ ] File discovery demand
+- [ ] Request police report, body cam footage, 911 calls
+- [ ] Identify and preserve surveillance footage (act quickly — often overwritten)
+- [ ] Assess suppression motion potential (illegal stop, search, statement)
+
+## Ongoing
+- [ ] Track all statutory and court-ordered deadlines (/court-deadline)
+- [ ] Review discovery as it arrives
+- [ ] Calendar motions hearing, pretrial conference, trial date
+```
+
+**Estate Planning / Probate:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Estate Planning / Probate  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Conflicts check: [leave blank]
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Identify estate planning goals (avoid probate? minimize tax? incapacity planning?)
+- [ ] Confirm who will serve as executor/trustee/agent
+- [ ] Identify all beneficiaries
+
+## This Week
+- [ ] Complete asset inventory (real estate, bank accounts, investments, retirement, life insurance)
+- [ ] Confirm beneficiary designations on accounts (often override the will)
+- [ ] Determine if pour-over will + revocable trust is appropriate
+- [ ] Assess need for durable power of attorney and healthcare directive
+
+## Ongoing
+- [ ] Draft documents (will, trust, POA, AHCD) in /drafts/ subfolder
+- [ ] Schedule execution/signing appointment
+- [ ] Confirm all assets are funded into trust after signing
+```
+
+**Immigration:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Immigration  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Conflicts check: [leave blank]
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Confirm current immigration status and any prior proceedings
+- [ ] Note visa expiration date — confirm no overstay
+- [ ] Confirm priority date (if family or employment based)
+- [ ] Assess any grounds of inadmissibility or deportability
+
+## This Week
+- [ ] Check Visa Bulletin for priority date movement
+- [ ] Identify all required supporting documents
+- [ ] Order certified birth certificates, marriage certificates as needed
+- [ ] Confirm sponsor's financial eligibility (I-864 threshold)
+
+## Ongoing
+- [ ] Track USCIS processing times and case status
+- [ ] Calendar biometrics and interview appointments
+- [ ] Monitor priority date each month
+```
+
+**Real Estate:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Real Estate  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Conflicts check — run buyer, seller, and property address: [leave blank]
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Review purchase agreement and note all contingency deadlines
+- [ ] Confirm closing date and calendar all interim deadlines
+- [ ] Order title search / title commitment
+
+## This Week
+- [ ] Review title commitment — note exceptions and required curative actions
+- [ ] Confirm inspection contingency deadline
+- [ ] Confirm financing contingency deadline
+- [ ] Review HOA documents if applicable
+
+## Ongoing
+- [ ] Track all contract deadlines (/court-deadline)
+- [ ] Coordinate with lender on loan commitment
+- [ ] Prepare closing documents
+- [ ] Confirm wire instructions directly with client (fraud risk — do not email)
+```
+
+**Employment:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Employment  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Conflicts check — run client and employer names: [leave blank]
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Confirm EEOC / DFEH filing deadline: 180 days (federal) or 300 days (dual-file states) from last discriminatory act — [date]
+- [ ] Assess whether NLRB charge is applicable and deadline (6 months from ULP)
+- [ ] Advise client to preserve all emails, texts, performance reviews — do not delete
+
+## This Week
+- [ ] Obtain all employment records (contract, handbook, reviews, disciplinary records)
+- [ ] Identify comparators and witnesses
+- [ ] Assess damages: lost wages, front pay, emotional distress, attorneys' fees
+- [ ] Determine if Right-to-Sue letter has been or must be obtained
+
+## Ongoing
+- [ ] Track all administrative and litigation deadlines (/court-deadline)
+- [ ] Monitor EEOC/DFEH charge processing
+- [ ] Update damages calculation monthly
+```
+
+**Contract Dispute / General:**
+```markdown
+# [Matter Name] — Task Checklist
+**Opened:** [Date]  **Practice Area:** Contract Dispute / General  **Status:** Active
+
+## Immediate (first 48 hours)
+- [ ] Run /intake-summary to create the matter brief
+- [ ] Conflicts check — run all parties: [leave blank]
+- [ ] Confirm statute of limitations: [state] = [years] for [contract/tort] from [breach/injury date]
+- [ ] Send engagement letter (/engagement-letter)
+- [ ] Preserve all relevant communications and contracts
+- [ ] Assess whether demand letter is appropriate before filing
+
+## This Week
+- [ ] Obtain and review all contracts and amendments
+- [ ] Document all damages with supporting evidence
+- [ ] Identify all parties and their roles
+- [ ] Research applicable law and jurisdiction
+
+## Ongoing
+- [ ] Track statute of limitations and court deadlines (/court-deadline)
+- [ ] Update damages calculation as new information arrives
+- [ ] Calendar all court-ordered deadlines
 ```
 
 Ask:
-> "Here is the starter task checklist. I'll save this as `tasks.md` in the new matter folder along with the folder structure above. Confirm to create everything, or request changes."
+> "Here is the starter task checklist for [practice area]. I'll save this as `tasks.md` in the new matter folder along with the folder structure above. Confirm to create everything, or request changes."
 
 ### Step 5 — Sort existing documents (optional)
 
-If the attorney indicated there are existing documents to file, use the Filesystem connector to read the file names and types from the source folder. Propose a mapping:
+If the attorney indicated there are existing documents to file, use the Filesystem connector to read the file names and types from the source folder. Apply the following matching rules to propose a destination for each file:
+
+| If the filename contains (case-insensitive) | Propose this subfolder |
+|---|---|
+| `police`, `incident`, `arrest` | `evidence/police-reports/` or `discovery/police-reports/` |
+| `medical`, `records`, `rx`, `prescription`, `lab`, `hospital`, `clinic` | `medical/records/` |
+| `bill`, `invoice`, `statement`, `EOB`, `explanation-of-benefits` | `medical/bills/` |
+| `photo`, `image`, `img`, `.jpg`, `.jpeg`, `.png`, `.heic` | `evidence/photos/` |
+| `contract`, `agreement`, `retainer`, `MOU`, `amendment` | `contracts/` |
+| `complaint`, `petition`, `motion`, `order`, `judgment`, `summons` | `pleadings/` |
+| `depo`, `deposition`, `transcript` | `discovery/` |
+| `email`, `letter`, `corr`, `correspondence` | `correspondence/` |
+| `will`, `trust`, `POA`, `power-of-attorney`, `AHCD`, `directive` | `drafts/` (estate) |
+| `title`, `deed`, `closing`, `HUD`, `settlement-statement` | `closing/` (real estate) |
+| `I-`, `USCIS`, `visa`, `passport`, `birth-cert`, `i94` | `forms/` or `supporting-documents/identity/` (immigration) |
+| `W-2`, `tax`, `1099`, `paystub`, `financial` | `financial-disclosures/` or `damages/` |
+
+If a file matches no rule, flag it as `[⚠️ Unable to classify — attorney must assign]` and list it separately at the bottom of the mapping.
+
+Propose the full mapping:
 
 ```
 [filename1.pdf] → [MatterName]/medical/records/
 [filename2.docx] → [MatterName]/correspondence/client/
 [filename3.jpg] → [MatterName]/evidence/photos/
+[filename4.xlsx] → [⚠️ Unable to classify — attorney must assign]
 ```
 
 Present the proposed mapping and ask for confirmation before moving any file.
