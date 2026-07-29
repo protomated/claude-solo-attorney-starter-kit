@@ -179,7 +179,7 @@ Output a structured `intake-summary.md` document:
 
 Show the full summary and ask:
 
-> "Would you like me to save this as `intake-summary.md` in [matter folder path]? Once saved, the other skills (demand-letter, engagement-letter, meeting-prep) will use this file as the source of record for this matter."
+> "Would you like me to save this as `intake-summary.md` in [matter folder path]? Once saved, the other skills (engagement-letter, meeting-prep, new-matter-organizer) will use this file as the source of record for this matter."
 
 Do not write the file without explicit confirmation.
 
