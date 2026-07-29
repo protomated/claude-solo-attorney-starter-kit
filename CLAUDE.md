@@ -52,6 +52,10 @@ npm run site:build     # next build
 npm run site:preview   # next start (preview the production build locally)
 ```
 
+## Commit conventions
+
+Do not add a `Co-Authored-By: Claude` (or any Anthropic) trailer to commit messages in this repo.
+
 ## Plugin format
 
 The bundle format is `.zip` (a ZIP renamed; previously `.mcpb`). It uses the **plugin variant** (not standalone) — no bundled MCP server.
