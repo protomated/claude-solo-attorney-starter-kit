@@ -37,7 +37,7 @@ Ask or infer from the argument:
 
 ### Step 2 — Read existing matter structure for consistency
 
-Use the Filesystem connector to scan the workspace folder (one level deep) for existing matter folders. Note the naming convention and folder structure used in prior matters — propose a new folder that follows the same pattern.
+Use the Filesystem connector to scan the workspace folder (one level deep) for existing matter folders. Skip non-matter folders such as `templates/` (used by `/engagement-letter` to store reusable firm templates). Note the naming convention and folder structure used in prior matters — propose a new folder that follows the same pattern.
 
 ### Step 3 — Propose the folder structure
 

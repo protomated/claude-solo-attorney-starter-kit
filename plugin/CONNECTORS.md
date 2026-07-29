@@ -44,3 +44,6 @@ Make sure your matter folders follow a consistent structure (e.g., one folder pe
 
 **Google Calendar shows "Not connected" or `/court-deadline` can't create events:**
 Go to Settings → Connectors and click Connect on Google Calendar. Sign in with the same Google account you use for scheduling. If you have multiple Google accounts, confirm you are connecting the right one.
+
+**`/engagement-letter` isn't using my own template:**
+Confirm your template's filename contains a word like "engagement," "retainer," or "fee agreement," and that it's saved either directly in the matter folder or inside a `templates/` folder at the top of your connected Filesystem folder (e.g. `~/Matters/templates/`). If it's a `.docx`/`.doc` file and the skill says it can't extract readable text, save a `.md` or `.txt` copy instead — Filesystem connectors read text-based files more reliably than binary formats.

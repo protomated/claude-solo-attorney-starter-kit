@@ -74,6 +74,8 @@ The plugin is instructed to request your explicit in-conversation confirmation b
 > **Recommended folder structure:**
 > ```
 > ~/Matters/
+> ├── templates/
+> │   └── engagement-letter-template.md
 > ├── Smith-John-PI/
 > │   ├── intake-summary.md
 > │   ├── tasks.md
@@ -85,7 +87,7 @@ The plugin is instructed to request your explicit in-conversation confirmation b
 > │   └── pleadings/
 > └── ...
 > ```
-> Run `/new-matter-organizer` to create this structure for a new matter, then `/intake-summary` to populate the anchor file all other skills read from.
+> Run `/new-matter-organizer` to create this structure for a new matter, then `/intake-summary` to populate the anchor file all other skills read from. If you have your own engagement-letter template, save it once as `templates/engagement-letter-template.md` (or `.txt`/`.docx`) and `/engagement-letter` will use it automatically for every matter.
 
 ### Step 4 — Connect Google Calendar
 
@@ -120,7 +122,7 @@ See [CONNECTORS.md](CONNECTORS.md) for troubleshooting.
 
 ### `/engagement-letter` — Engagement Letter Drafter
 
-Drafts a retainer and engagement letter from intake data. Covers scope of representation, fee structure (hourly, flat fee, or contingency), client obligations, and required disclosures. Requires your confirmation before saving.
+Drafts a retainer and engagement letter from intake data. If you've saved your own template at `templates/engagement-letter-template.md` (or `.txt`/`.docx`) at the top of your Matters folder, or in the specific matter folder, the skill fills in your own wording instead of the built-in generic letter. Covers scope of representation, fee structure (hourly, flat fee, or contingency), client obligations, and required disclosures. Requires your confirmation before saving.
 
 **Use when:** A new client is ready to retain you.
 
