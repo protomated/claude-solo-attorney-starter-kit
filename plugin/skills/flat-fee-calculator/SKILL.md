@@ -54,9 +54,9 @@ Present three flat-fee scenarios per matter. Do not present these as recommendat
 
 | Scenario | Formula | What it represents |
 |---|---|---|
-| **A — Break-even flat fee** | `hourly_rate × hours_before` | Same per-matter revenue as pre-AI hourly billing. Firm keeps 100% of the efficiency gain; client pays the same as before. Highest client-pushback risk. |
-| **B — Split the savings (50/50)** | `(hourly_rate × hours_after) + 0.5 × (hourly_rate × hours_before − hourly_rate × hours_after)` | Client and firm each keep half the time saved. A common, defensible middle position. |
-| **C — Value-conscious flat fee** | `hourly_rate × hours_after × 1.25` | A 25% margin over AI-accelerated hourly cost — priced closer to actual time spent, positioned as a modest premium for outcome certainty rather than capturing most of the AI gain. Lowest client-pushback risk, smallest revenue recovery. |
+| **A — Break-even flat fee** | `hourly_rate × hours_before` | Same per-matter revenue as pre-AI hourly billing. Firm keeps 100% of the efficiency gain; client pays the same as before. Of the three, this always has the highest client-pushback risk — it is mathematically always the highest-revenue scenario whenever AI saves any time at all. |
+| **B — Split the savings (50/50)** | `(hourly_rate × hours_after) + 0.5 × (hourly_rate × hours_before − hourly_rate × hours_after)` | Client and firm each keep half the time saved. A common, defensible middle position. Always below A; whether it lands above or below C depends on how much time AI actually saved (see note below the table). |
+| **C — Value-conscious flat fee** | `hourly_rate × hours_after × 1.25` | A 25% margin over AI-accelerated hourly cost — priced closer to actual time spent, positioned as a modest premium for outcome certainty. Always above the status-quo hourly revenue; whether it lands above or below B depends on the size of the AI time savings (see note below the table). |
 
 For each scenario, also compute:
 - **Per-matter revenue** (the formula result)
@@ -69,11 +69,13 @@ Assemble all scenarios plus the two hourly baselines into one table:
 
 | Approach | Per-Matter Revenue | Annual Revenue (× volume) | Effective $/hr Worked |
 |---|---|---|---|
-| Stay hourly, pre-AI time | [baseline] | [× volume] | [= nominal rate] |
-| Stay hourly, AI-accelerated (status quo leak) | [AI-accelerated hourly] | [× volume] | [lower than nominal rate] |
-| Flat fee — A: Break-even | [Scenario A] | [× volume] | [highest] |
-| Flat fee — B: Split savings 50/50 | [Scenario B] | [× volume] | [middle] |
-| Flat fee — C: Value-conscious | [Scenario C] | [× volume] | [lowest of the three flat fees, still above status-quo-leak row] |
+| Stay hourly, pre-AI time | [baseline] | [× volume] | [= nominal rate — by definition, billing hourly always nets the nominal rate per hour worked] |
+| Stay hourly, AI-accelerated (status quo leak) | [AI-accelerated hourly] | [× volume] | [= nominal rate — same rate as above; the leak shows up as lower *revenue* per matter, not a lower rate] |
+| Flat fee — A: Break-even | [Scenario A] | [× volume] | [computed value] |
+| Flat fee — B: Split savings 50/50 | [Scenario B] | [× volume] | [computed value] |
+| Flat fee — C: Value-conscious | [Scenario C] | [× volume] | [computed value] |
+
+Compute each flat-fee scenario's actual effective $/hr and sort the three by that value in the presented table — do not assume a fixed ranking. A > B always holds when AI saves any time at all, but whether B or C is higher depends on how much time AI actually saves: B beats C only when `hours_after ÷ hours_before < 2/3` (roughly a 33%+ time reduction). For smaller efficiency gains, C can land above B. Show the attorney the numbers you actually computed, not an assumed order.
 
 ### Step 5 — Draft the CSV model
 
