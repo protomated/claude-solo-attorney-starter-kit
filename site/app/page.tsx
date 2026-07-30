@@ -28,7 +28,7 @@ export default function Page() {
             Need a custom skill library for your practice?
           </h2>
           <p className="mx-auto mb-3.5 max-w-[600px] font-sans text-[0.97rem] leading-relaxed text-muted-foreground">
-            The 6 skills in this kit cover core practice tasks. A typical
+            The 7 skills in this kit cover core practice tasks. A typical
             solo practice has 15&ndash;20 more: jurisdiction-specific filings,
             full docketing automation, Clio or Filevine integration, and
             skills tuned to your exact voice, jurisdiction, and playbook.

@@ -1,6 +1,6 @@
 # Solo Attorney Claude Starter Kit
 
-A Claude Desktop plugin for solo attorneys. Six skills that read your local matter files, Gmail, and Google Calendar to organize new matters, draft engagement letters and intake summaries, compute court deadlines, prepare meeting briefs, and draft billing narratives — in under five minutes of setup.
+A Claude Desktop plugin for solo attorneys. Seven skills that read your local matter files, Gmail, and Google Calendar to organize new matters, draft engagement letters and intake summaries, compute court deadlines, prepare meeting briefs, draft billing narratives, and model flat-fee repricing — in under five minutes of setup.
 
 Distributed free by [Protomated](https://protomated.com) at [protomated.com/resources](https://protomated.com/resources).
 
@@ -48,6 +48,7 @@ docs/
 | `/meeting-prep` | Produces a one-page brief for client meetings, depositions, mediations, and court appearances |
 | `/billing-narrative` | Drafts a billing-code-appropriate time narrative from your notes or an email thread |
 | `/new-matter-organizer` | Creates the standard folder tree and task checklist for a new matter; sorts existing documents by type |
+| `/flat-fee-calculator` | Builds a revenue-impact model comparing hourly billing to flat-fee pricing for AI-accelerated tasks; outputs a CSV |
 
 ---
 
