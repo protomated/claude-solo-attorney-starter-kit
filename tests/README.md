@@ -12,6 +12,7 @@ One guide per skill, fully self-contained — each file includes the synthetic t
 - [`meeting-prep.md`](meeting-prep.md)
 - [`billing-narrative.md`](billing-narrative.md)
 - [`new-matter-organizer.md`](new-matter-organizer.md)
+- [`flat-fee-calculator.md`](flat-fee-calculator.md)
 
 ## Before you start
 

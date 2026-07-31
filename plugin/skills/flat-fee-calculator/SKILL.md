@@ -54,9 +54,9 @@ Present three flat-fee scenarios per matter. Do not present these as recommendat
 
 | Scenario | Formula | What it represents |
 |---|---|---|
-| **A — Break-even flat fee** | `hourly_rate × hours_before` | Same per-matter revenue as pre-AI hourly billing. Firm keeps 100% of the efficiency gain; client pays the same as before. Of the three, this always has the highest client-pushback risk — it is mathematically always the highest-revenue scenario whenever AI saves any time at all. |
-| **B — Split the savings (50/50)** | `(hourly_rate × hours_after) + 0.5 × (hourly_rate × hours_before − hourly_rate × hours_after)` | Client and firm each keep half the time saved. A common, defensible middle position. Always below A; whether it lands above or below C depends on how much time AI actually saved (see note below the table). |
-| **C — Value-conscious flat fee** | `hourly_rate × hours_after × 1.25` | A 25% margin over AI-accelerated hourly cost — priced closer to actual time spent, positioned as a modest premium for outcome certainty. Always above the status-quo hourly revenue; whether it lands above or below B depends on the size of the AI time savings (see note below the table). |
+| **A — Break-even flat fee** | `hourly_rate × hours_before` | Same per-matter revenue as pre-AI hourly billing. Firm keeps 100% of the efficiency gain; client pays the same as before. Always ≥ B; not always the single highest of the three — see the note below the table. |
+| **B — Split the savings (50/50)** | `(hourly_rate × hours_after) + 0.5 × (hourly_rate × hours_before − hourly_rate × hours_after)` | Client and firm each keep half the time saved. A common, defensible middle position. Never the highest of the three (always ≤ A); whether it's the lowest or the middle value depends on how much time AI saved — see the note below the table. |
+| **C — Value-conscious flat fee** | `hourly_rate × hours_after × 1.25` | A 25% margin over AI-accelerated hourly cost — priced closer to actual time spent, positioned as a modest premium for outcome certainty. Always above the status-quo hourly revenue; can be the highest, middle, or lowest of the three depending on how much time AI saved — see the note below the table. |
 
 For each scenario, also compute:
 - **Per-matter revenue** (the formula result)
@@ -75,7 +75,15 @@ Assemble all scenarios plus the two hourly baselines into one table:
 | Flat fee — B: Split savings 50/50 | [Scenario B] | [× volume] | [computed value] |
 | Flat fee — C: Value-conscious | [Scenario C] | [× volume] | [computed value] |
 
-Compute each flat-fee scenario's actual effective $/hr and sort the three by that value in the presented table — do not assume a fixed ranking. A > B always holds when AI saves any time at all, but whether B or C is higher depends on how much time AI actually saves: B beats C only when `hours_after ÷ hours_before < 2/3` (roughly a 33%+ time reduction). For smaller efficiency gains, C can land above B. Show the attorney the numbers you actually computed, not an assumed order.
+Compute the three actual dollar values for A, B, and C and sort them in the presented table — never assume a fixed ranking. The only relationship that always holds is A ≥ B (break-even is never below the split-savings scenario). Where C falls depends entirely on how much time AI actually saved, expressed as the ratio `hours_after ÷ hours_before`:
+
+| AI time savings | Ratio `hours_after ÷ hours_before` | Order |
+|---|---|---|
+| ≥ 33% | < 2/3 (≈0.667) | A > B > C |
+| 20%–33% | 0.667–0.8 | A > C > B |
+| < 20% | > 0.8 | C > A > B |
+
+This means for a task where AI only saves a small amount of time, the "value-conscious" scenario C can actually be the *highest*-revenue option, not the lowest — because its 1.25× multiplier is applied to a `hours_after` that's barely smaller than `hours_before`. Always compute and show the real numbers; never state in the narrative (Step 6) that a scenario is "the most" or "the least" of anything without having just computed it for these specific inputs.
 
 ### Step 5 — Draft the CSV model
 
