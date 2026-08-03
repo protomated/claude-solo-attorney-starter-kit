@@ -1,6 +1,6 @@
 # Solo Attorney Claude Starter Kit — Claude Desktop Plugin
 
-A Claude Desktop plugin that turns your local matter files, Gmail, and Google Calendar into a solo attorney operations assistant. Seven pre-built skills: intake summaries, engagement letters, court deadline reasoning, meeting prep briefs, billing narrative drafting, new-matter setup, and a flat-fee repricing calculator — from your own files, in under five minutes of setup.
+A Claude Desktop plugin that turns your local matter files, Gmail, and Google Calendar into a solo attorney operations assistant. Eight pre-built skills: intake summaries, engagement letters, court deadline reasoning, meeting prep briefs, billing narrative drafting, new-matter setup, a flat-fee repricing calculator, and estate planning document assembly — from your own files, in under five minutes of setup.
 
 **Distributed by [Protomated](https://protomated.com) as a free download.**
 
@@ -87,9 +87,14 @@ The plugin is instructed to request your explicit in-conversation confirmation b
 > │   ├── intake-summary.md
 > │   ├── tasks.md
 > │   └── pleadings/
+> ├── Castellano-Estate-Plan/
+> │   ├── intake-summary.md
+> │   └── drafts/
+> │       ├── will/
+> │       └── poa/
 > └── ...
 > ```
-> Run `/new-matter-organizer` to create this structure for a new matter, then `/intake-summary` to populate the anchor file all other skills read from. If you have your own engagement-letter template, save it once as `templates/engagement-letter-template.md` (or `.txt`/`.docx`) and `/engagement-letter` will use it automatically for every matter. `/flat-fee-calculator` saves its CSV models to a top-level `pricing/` folder since a repricing model applies across matters of a given type, not to a single matter.
+> Run `/new-matter-organizer` to create this structure for a new matter, then `/intake-summary` to populate the anchor file all other skills read from. If you have your own engagement-letter template, save it once as `templates/engagement-letter-template.md` (or `.txt`/`.docx`) and `/engagement-letter` will use it automatically for every matter. `/flat-fee-calculator` saves its CSV models to a top-level `pricing/` folder since a repricing model applies across matters of a given type, not to a single matter. `/estate-planning` looks for your own will/POA/HIPAA templates in the same `templates/` folder (or a matter-specific override) and saves its drafts into that matter's `drafts/will/` and `drafts/poa/` subfolders.
 
 ### Step 4 — Connect Google Calendar
 
@@ -99,7 +104,7 @@ The plugin is instructed to request your explicit in-conversation confirmation b
 
 ### Step 5 — Verify
 
-Open a new Claude Desktop chat. Type `/skills`. You should see all seven skills listed. Run `/intake-summary` on a test matter to verify Filesystem access is working.
+Open a new Claude Desktop chat. Type `/skills`. You should see all eight skills listed. Run `/intake-summary` on a test matter to verify Filesystem access is working.
 
 See [CONNECTORS.md](CONNECTORS.md) for troubleshooting.
 
@@ -198,6 +203,18 @@ Builds a revenue-impact model comparing hourly billing to flat-fee/value pricing
 
 ---
 
+### `/estate-planning` — Estate Planning Document Assembly
+
+Populates a basic will, healthcare power of attorney, financial power of attorney, and HIPAA authorization from one intake pass — family, assets, beneficiaries, and healthcare wishes. Uses your own state-specific templates when you've saved them; otherwise drafts from a generic, clearly-labeled placeholder that makes no claim of state-specific legal accuracy. Flags every missing required field per document type, including a hard stop if minor children have no guardian named. Trusts, pour-over wills, beneficiary deeds, and estate funding are out of scope.
+
+**Use when:** Estate-planning intake is complete and you're ready to assemble the core document set for attorney review.
+
+```
+/estate-planning ~/Matters/Castellano-Estate-Plan
+```
+
+---
+
 ## How It Works
 
 This plugin connects Claude Desktop to three things you already have: your local matter files, your Gmail, and your Google Calendar. There is no cloud database, no subscription, and no Protomated server involved in processing your client data.
@@ -216,7 +233,7 @@ All processing happens inside your Claude Desktop session. See [CONNECTORS.md](C
 
 ## Want a Custom Skill Library Built for Your Practice?
 
-This kit covers seven core workflows. The typical solo practice has 15–20 more: jurisdiction-specific court filings, intake questionnaires tuned to your practice areas, Clio or Filevine integration, and skills built to your exact voice and playbook.
+This kit covers eight core workflows. The typical solo practice has 15–20 more: jurisdiction-specific court filings, intake questionnaires tuned to your practice areas, Clio or Filevine integration, and skills built to your exact voice and playbook.
 
 **Protomated builds custom Claude Desktop skill libraries for solo and small-firm attorneys: $3,000–$6,000 depending on scope.**
 

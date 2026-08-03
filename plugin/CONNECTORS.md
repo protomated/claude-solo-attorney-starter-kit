@@ -50,3 +50,6 @@ Confirm your template's filename contains a word like "engagement," "retainer," 
 
 **`/flat-fee-calculator` CSV won't open cleanly in Excel:**
 Make sure you saved it with the `.csv` extension the skill proposes. If a currency or percentage column looks like plain text instead of a number, re-import it or use your spreadsheet program's "convert text to columns" tool — Filesystem-connector writes are plain text, so number formatting applied in Excel afterward is normal.
+
+**`/estate-planning` isn't using my own will/POA/HIPAA templates:**
+Each of the four document types resolves its template independently — confirm the filename for the document in question contains a matching keyword (e.g. "will," "healthcare power of attorney," "durable power of attorney," "hipaa") and is saved either in the matter folder or in the shared `templates/` folder. It's normal to have a template for some document types and not others — any type without a matching file falls back to the built-in generic placeholder. If a `.docx`/`.doc` file can't be read, save a `.md` or `.txt` copy instead.
