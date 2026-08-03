@@ -1,6 +1,6 @@
 {
   "name": "solo-attorney-starter-kit",
-  "version": "3.2.0",
+  "version": "3.1.0",
   "description": "Solo Attorney Claude Starter Kit — Claude Desktop plugin for solo attorneys",
   "private": true,
   "scripts": {
