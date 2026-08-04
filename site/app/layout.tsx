@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Solo Attorney Claude Starter Kit — Free Claude Desktop Plugin",
   description:
-    "7 pre-built Claude Desktop skills for solo attorneys. Organize matters, draft engagement letters, compute court deadlines, prep for meetings, write billing narratives, and model flat-fee repricing in under 5 minutes. Free download.",
+    "8 pre-built Claude Desktop skills for solo attorneys. Organize matters, draft engagement letters, compute court deadlines, prep for meetings, write billing narratives, model flat-fee repricing, and draft verified-source research memos in under 5 minutes. Free download.",
 };
 
 export default function RootLayout({

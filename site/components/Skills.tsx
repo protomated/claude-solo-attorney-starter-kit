@@ -36,13 +36,18 @@ const skills = [
     title: "Flat-Fee Repricing Calculator",
     desc: "Builds a revenue-impact model comparing hourly billing to flat-fee pricing for tasks you've sped up with AI. Outputs a CSV with candidate price points that preserve margin instead of giving the time savings away for free.",
   },
+  {
+    command: "/research-memo",
+    title: "Verified-Source Research Memo",
+    desc: "Drafts a legal research memo citing only the source documents you attach — no web search, no case-law database. Refuses to cite anything not supplied and appends a mandatory citation-verification checklist.",
+  },
 ];
 
 export default function Skills() {
   return (
     <section className="bg-muted py-20" id="skills">
       <div className="mx-auto max-w-[960px] px-6">
-        <h2 className="mb-3 text-center text-[1.9rem]">7 skills included</h2>
+        <h2 className="mb-3 text-center text-[1.9rem]">8 skills included</h2>
         <p className="mx-auto mb-12 max-w-[560px] text-center font-sans text-base text-muted-foreground">
           Each skill knows which files and emails to read, what to draft, and to
           wait for your confirmation before taking any action.

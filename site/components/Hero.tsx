@@ -10,11 +10,11 @@ export default function Hero() {
           set up in 5 minutes.
         </h1>
         <p className="mx-auto mb-9 max-w-[620px] font-sans text-lg leading-relaxed text-[#b0bcd4]">
-          7 pre-built skills that turn Claude Desktop into a solo attorney
+          8 pre-built skills that turn Claude Desktop into a solo attorney
           operations assistant. Organize new matters, draft engagement letters,
           compute court deadlines, prep for meetings, write billing
-          narratives, and model flat-fee repricing &mdash; from your own
-          files, without leaving Claude.
+          narratives, model flat-fee repricing, and draft verified-source
+          research memos &mdash; from your own files, without leaving Claude.
         </p>
         <a
           href="#download"
