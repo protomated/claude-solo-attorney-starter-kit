@@ -4,7 +4,14 @@
       "type": "http",
       "url": "https://protomated.youtrack.cloud/mcp",
       "headers": {
-        "Authorization": "Bearer perm-ZW1tYW51ZWwuZQ==.NDMtMTE=.I4pdLhLYOSrbXFAxIiEtwQMQCHJJYd"
+        "Authorization": "Bearer ${YOUTRACK_API_TOKEN}"
+      }
+    },
+    "nifty-claude-code": {
+      "type": "http",
+      "url": "https://mcp.niftypm.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${NIFTY_API_TOKEN}"
       }
     },
     "better-auth": {
@@ -19,14 +26,14 @@
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp"],
       "env": {
-        "CONTEXT7_API_KEY": "YOUR_CONTEXT7_API_KEY"
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
       }
     },
     "basehub": {
       "type": "http",
       "url": "https://basehub.com/api/mcp",
       "headers": {
-        "Authorization": "Bearer YOUR_BASEHUB_MCP_TOKEN"
+        "Authorization": "Bearer ${BASEHUB_MCP_TOKEN}"
       }
     },
     "trigger": {
