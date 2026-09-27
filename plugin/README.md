@@ -203,6 +203,18 @@ All processing happens inside your Claude Desktop session. See [CONNECTORS.md](C
 
 ---
 
+## Optional Connectors
+
+Not every skill needs all three connectors, and none of them are hard-required to get value from this kit:
+
+- **Filesystem** is the one most skills lean on, but even here `/intake-summary` and `/billing-narrative` work entirely from notes you paste in — no connected folder needed. Skills that write to the matter folder (`/new-matter-organizer`, `/engagement-letter`) will simply ask you to paste text or confirm a save location if it isn't connected.
+- **Gmail** is used only as *supplementary* context — `/meeting-prep` checks recent email for developments, and `/engagement-letter` checks for agreed fee terms. Both skills work fully without it; they just skip the email-context step.
+- **Google Calendar** is used only by `/court-deadline`'s final step. The deadline computation and its full reasoning happen with or without this connector — Calendar is only needed if you want the confirmed date turned into a calendar event automatically.
+
+Connect only what you plan to use. Skills degrade gracefully and will tell you what they couldn't check.
+
+---
+
 ## Want a Custom Skill Library Built for Your Practice?
 
 This kit covers six core workflows. The typical solo practice has 15–20 more: jurisdiction-specific court filings, intake questionnaires tuned to your practice areas, Clio or Filevine integration, and skills built to your exact voice and playbook.

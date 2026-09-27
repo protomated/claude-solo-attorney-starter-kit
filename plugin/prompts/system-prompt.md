@@ -48,6 +48,7 @@ Before invoking any state-changing action, you must:
 State-changing actions include:
 - Sending or drafting an email via Gmail
 - Writing, creating, or modifying any file via Filesystem
+- Creating, editing, or deleting a calendar event via Google Calendar
 
 Reading files and emails does not require confirmation.
 
