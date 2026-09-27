@@ -20,7 +20,7 @@ You must be on one of the following before using this plugin with real client ma
 - **Claude Team or Enterprise**
 - **Claude API** (with a signed DPA from Anthropic)
 
-Using a consumer plan with client-privileged content risks waiving attorney-client privilege and may violate your ethical obligations to your clients. See *Heppner v. Doe* (S.D.N.Y. Feb. 2026) and your state bar's AI ethics guidance before proceeding.
+Using a consumer plan with client-privileged content risks waiving attorney-client privilege and may violate your ethical obligations to your clients. See *United States v. Heppner* (S.D.N.Y. Feb. 2026) and your state bar's AI ethics guidance before proceeding.
 
 > **If you're not sure which plan you're on:** Open Claude Desktop → Help → About. If it says "Claude Pro," you are on a consumer plan. Upgrade to Claude for Work or obtain API access before connecting client email or matter files.
 
