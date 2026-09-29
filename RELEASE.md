@@ -1,26 +1,8 @@
-# Solo Attorney Claude Starter Kit v2.0.0
+# Solo Attorney Claude Starter Kit v3.4.1
 
-**Breaking change:** two skills removed, three added, one new connector required.
+Adds Legal Builder Hub freshness frontmatter to all six skills (`court-deadline` is `regulatory` with a 6-month window; the rest are `procedural` with a 12-month window). Also carries this cycle's Dele skills-qa fixes: corrected compliance guardrails, fixed a fabricated case citation, rewrote Meeting Prep and New-Matter Organizer per review findings, and added `title`/`description` metadata to the built-in connector declarations. No breaking changes.
 
-## What's new
-
-### Three new skills
-- **`/court-deadline`** — computes a court or filing deadline from a trigger date and rule you provide. Shows step-by-step reasoning. Drafts a Google Calendar event — you confirm before it's created.
-- **`/billing-narrative`** — drafts a billing-code-appropriate time narrative from your rough notes or an email thread. Suggests the time increment; you confirm accuracy before billing.
-- **`/new-matter-organizer`** — creates the standard folder tree and task checklist for a new matter based on practice area (PI, Family Law, Criminal Defense, Estate/Probate, Immigration, Contract). Sorts existing documents into the correct sub-folders — all changes require your confirmation.
-
-### New connector: Google Calendar
-`/court-deadline` creates deadline events in your Google Calendar after explicit attorney confirmation. Connect once in Claude Desktop → Settings → Connectors → Google Calendar.
-
-### Plugin renamed
-Plugin ID is now `solo-attorney-starter-kit`.
-
-## Removed
-
-- `/client-status-update` — not part of this bundle
-- `/demand-letter` — not part of this bundle
-
-## Skills included (v2.0.0)
+## Skills included
 
 | Skill | What it does |
 |---|---|
