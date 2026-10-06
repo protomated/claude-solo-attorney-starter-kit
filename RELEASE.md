@@ -1,6 +1,8 @@
-# Solo Attorney Claude Starter Kit v3.4.1
+# Solo Attorney Claude Starter Kit
 
-Adds Legal Builder Hub freshness frontmatter to all six skills (`court-deadline` is `regulatory` with a 6-month window; the rest are `procedural` with a 12-month window). Also carries this cycle's Dele skills-qa fixes: corrected compliance guardrails, fixed a fabricated case citation, rewrote Meeting Prep and New-Matter Organizer per review findings, and added `title`/`description` metadata to the built-in connector declarations. No breaking changes.
+Fixed the ChatGPT Desktop upload failure: removed `plugin/.mcp.json` — ChatGPT's plugin importer rejects any zip containing one, blank connector URLs included. Gmail, Calendar, and Filesystem were already documented as fully optional; every skill already falls back cleanly to paste/attach without them, so removing the declaration costs no real functionality. Confirmed working in ChatGPT Desktop.
+
+Removed the hardcoded "(Claude Desktop)" wording from all six skills' output footers, and documented ChatGPT Desktop installation and the paste/attach fallback in README.md and CONNECTORS.md.
 
 ## Skills included
 
@@ -15,7 +17,7 @@ Adds Legal Builder Hub freshness frontmatter to all six skills (`court-deadline`
 
 ## Setup
 
-Install time: ~5 minutes. Connect Gmail, your matters folder, and Google Calendar once in Claude Desktop → Settings → Connectors. See `plugin/CONNECTORS.md` for step-by-step instructions.
+Install time: ~5 minutes. Works with or without connectors — Gmail, your matters folder, and Google Calendar are all optional in Claude Desktop (Settings → Connectors). On ChatGPT Desktop, paste notes and attach files directly to the conversation instead. See `plugin/CONNECTORS.md` for step-by-step instructions on both platforms.
 
 ## Compliance
 
